@@ -6,6 +6,7 @@
   <script src="https://npmcdn.com/vue/dist/vue.js"></script>
   <link rel="stylesheet" href="css/foundation.min.css">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
 <body>
@@ -41,15 +42,20 @@
         <button id="give-up" @click='giveUp'>GIVE UP</button>
       </div>
     </section>
-    <section class="row log" v-if="turns.length > 0">
-      <div class="small-12 columns">
-        <ul>
-          <li v-for='turn in turns'>
-            {{ turn.text }} {{ turn.heal }}
-          </li>
-        </ul>
-      </div>
-    </section>
+    <transition enter-active-class="animated fadeInDown">
+      <section class="row log" v-if="turns.length > 0">
+        <div class="small-12 columns">
+          <ul>
+            <transition-group enter-active-class="animated fadeInDown">
+              <li v-for='turn in turns' :key="turn">
+                {{ turn.text }} {{ turn.heal }}
+              </li>
+            </transition-group>
+
+          </ul>
+        </div>
+      </section>
+    </transition>
   </div>
 
   <script src='app.js'></script>
