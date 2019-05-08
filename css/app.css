@@ -1,5 +1,18 @@
+#app {
+    background-image: url('../images/bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 .text-center {
     text-align: center;
+    color: #fff;
 }
 
 .healthbar {
@@ -12,8 +25,10 @@
 
 .controls, .log {
     margin-top: 30px;
+    margin-bottom: 50px;
     text-align: center;
     padding: 10px;
+    background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0px 3px 6px #ccc;
 }
